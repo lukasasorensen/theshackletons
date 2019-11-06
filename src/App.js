@@ -1,26 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { IntlProvider } from 'react-intl';
+import Header from './components/Header';
+import en from './translations/en.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<IntlProvider locale="en" messages={en}>
+			<div className="App">
+				<Header></Header>
+			</div>
+		</IntlProvider>
+	);
 }
 
 export default App;

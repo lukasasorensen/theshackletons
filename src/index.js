@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// import { addLocaleData } from "react-intl";
+
+// addLocaleData([...locale_en]);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
