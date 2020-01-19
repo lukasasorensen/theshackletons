@@ -1,10 +1,4 @@
-export default [{
-        translationId: "header.home.link.label",
-        route: "/home",
-        id: "home",
-        colorPrimary: "#13ebfb",
-        colorSecondary: "#de00ff"
-    },
+export default [
     {
         translationId: "header.music.link.label",
         route: "/music",
