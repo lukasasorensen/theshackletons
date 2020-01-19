@@ -1,0 +1,36 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+header {
+    width: 100vw;
+    height: 100vh;
+
+    .header-title-container {
+        width: 100vw;
+        text-align: center;
+    }
+    
+    .header-links-container {
+        //color: $primary-color;
+        margin-left: 5%;
+        margin-top: 3%;
+        display: inline-block;
+        width: 100%;
+    
+        a {
+            font-size: 1.2em;
+            color: inherit;
+            margin-right: 20px;
+        }
+    }
+    
+    h1 {
+        color: inherit;
+        font-size: 15vw;
+        margin-top: 23%;
+        margin-left: -8%;
+        white-space: nowrap;
+        @include transform(rotate(-30deg));
+    }
+}
+

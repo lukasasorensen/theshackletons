@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/App.scss';
 import { IntlProvider } from 'react-intl';
 import Header from './components/Header';
 import en from './translations/en.js';
