@@ -15,7 +15,7 @@ export default class Modal extends React.Component {
     
 	render() {
 		return (
-            <Draggable onMouseDown={this.focusModal.bind(this)}>
+            <Draggable onMouseDown={this.focusModal.bind(this)} handle=".modal-header">
 			<div className={`modal ${this.props.hidden ? 'hidden' : 'visible'}`} style={{zIndex: this.props.zIndex}}>
 				<div className="modal-header">
 					<div className="modal-close" onClick={this.onModalClose.bind(this)}>&times;</div>

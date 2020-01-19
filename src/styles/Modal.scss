@@ -14,6 +14,7 @@ $modal-bg: #ccc;
     background-color: $modal-bg;
 
     .modal-header {
+        cursor: pointer;
         text-align: center;
         width: 100%;
         border-bottom: $modal-border;
