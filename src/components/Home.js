@@ -24,6 +24,7 @@ export default class Home extends Component {
 	}
 
 	openModal(modalId) {
+        this.focusModal(modalId);
 		this.updateModal(modalId, 'hidden', false);
 	}
 
