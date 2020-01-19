@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Modal from './Modal';
 import About from './About';
+import Music from './Music';
+import Gigs from './Gigs';
+import Contact from './Contact';
 import headerLinks from '../constants/headerLinks';
 
 export default class Home extends Component {
@@ -9,8 +12,8 @@ export default class Home extends Component {
 		super(props);
 
 		const defaultModalState = {
-            hidden: true,
-            zIndex: 9999
+			hidden: true,
+			zIndex: 9999
 		};
 		this.state = {
 			about: defaultModalState,
@@ -26,17 +29,20 @@ export default class Home extends Component {
 
 	closeModal(modalId) {
 		this.updateModal(modalId, 'hidden', true);
-    }
-    
-    focusModal(modalId) {
-        this.setState((state) => {
-            let modals = { ...state }
-            let highestIndex = Math.max.apply(Math, Object.keys(modals).map(modal => modals[modal].zIndex));
-            highestIndex++;
-            modals[modalId].zIndex = highestIndex;
-            return modals;
-        }, () => console.log(JSON.stringify(this.state, null, 2)))
-    }
+	}
+
+	focusModal(modalId) {
+		this.setState(
+			(state) => {
+				let modals = { ...state };
+				let highestIndex = Math.max.apply(Math, Object.keys(modals).map((modal) => modals[modal].zIndex));
+				highestIndex++;
+				modals[modalId].zIndex = highestIndex;
+				return modals;
+			},
+			() => console.log(JSON.stringify(this.state, null, 2))
+		);
+	}
 
 	updateModal(modalId, prop, value) {
 		console.log(modalId);
@@ -57,39 +63,39 @@ export default class Home extends Component {
 				<Header headerLinks={headerLinks} handleHeaderLinkClick={this.openModal.bind(this)} />
 				<Modal
 					title="music.header.title"
-                    hidden={this.state.music.hidden}
-                    zIndex={this.state.music.zIndex}
+					hidden={this.state.music.hidden}
+					zIndex={this.state.music.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'music')}
 					handleFocusModal={this.focusModal.bind(this, 'music')}
 				>
-					<About />
+					<Music />
 				</Modal>
 				<Modal
 					title="gigs.header.title"
-                    hidden={this.state.gigs.hidden}
-                    zIndex={this.state.gigs.zIndex}
-                    handleOnModalClose={this.closeModal.bind(this, 'gigs')}
-                    handleFocusModal={this.focusModal.bind(this, 'gigs')}
+					hidden={this.state.gigs.hidden}
+					zIndex={this.state.gigs.zIndex}
+					handleOnModalClose={this.closeModal.bind(this, 'gigs')}
+					handleFocusModal={this.focusModal.bind(this, 'gigs')}
 				>
-					<About />
+					<Gigs />
 				</Modal>
 				<Modal
 					title="about.header.title"
-                    hidden={this.state.about.hidden}
-                    zIndex={this.state.about.zIndex}
-                    handleOnModalClose={this.closeModal.bind(this, 'about')}
-                    handleFocusModal={this.focusModal.bind(this, 'about')}
+					hidden={this.state.about.hidden}
+					zIndex={this.state.about.zIndex}
+					handleOnModalClose={this.closeModal.bind(this, 'about')}
+					handleFocusModal={this.focusModal.bind(this, 'about')}
 				>
 					<About />
 				</Modal>
 				<Modal
 					title="contact.header.title"
-                    hidden={this.state.contact.hidden}
-                    zIndex={this.state.contact.zIndex}
-                    handleOnModalClose={this.closeModal.bind(this, 'contact')}
-                    handleFocusModal={this.focusModal.bind(this, 'contact')}
+					hidden={this.state.contact.hidden}
+					zIndex={this.state.contact.zIndex}
+					handleOnModalClose={this.closeModal.bind(this, 'contact')}
+					handleFocusModal={this.focusModal.bind(this, 'contact')}
 				>
-					<About />
+					<Contact />
 				</Modal>
 			</div>
 		);
