@@ -6,9 +6,10 @@ $modal-bg: #ccc;
 .modal {
     top: 10%;
     left: 50%;
+    margin-left: -400px;
     z-index: 9999;
-    width: 30vw;
-    max-width: 800px;
+    width: 800px;
+    height: 800px;
     position: fixed;
     border: $modal-border;
     background-color: $modal-bg;
