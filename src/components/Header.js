@@ -30,18 +30,6 @@ export default class Header extends Component {
 							<a
 								href={link.route}
 								className="header-link link.key"
-								onMouseEnter={this.linkMouseOver.bind(
-									this,
-									true,
-									link.colorPrimary,
-									link.colorSecondary
-								)}
-								onMouseLeave={this.linkMouseOver.bind(
-									this,
-									false,
-									this.defaultPrimaryColor,
-									this.defaultSecondaryColor
-								)}
 							>
 								<FormattedMessage id={link.translationId} />
 							</a>
