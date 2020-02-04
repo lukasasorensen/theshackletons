@@ -6,6 +6,7 @@ import Music from './Music';
 import Gigs from './Gigs';
 import Contact from './Contact';
 import headerLinks from '../constants/headerLinks';
+import '../styles/Home.scss';
 
 export default class Home extends Component {
 	constructor(props) {
@@ -60,7 +61,7 @@ export default class Home extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<div className="home">
 				<Header headerLinks={headerLinks} handleHeaderLinkClick={this.openModal.bind(this)} />
 				<Modal
 					title="music.header.title"
@@ -98,6 +99,7 @@ export default class Home extends Component {
 				>
 					<Contact />
 				</Modal>
+                <div className="background-image"></div>
 			</div>
 		);
 	}
