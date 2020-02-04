@@ -20,12 +20,35 @@ export default class Home extends Component {
 			about: defaultModalState,
 			music: defaultModalState,
 			gigs: defaultModalState,
-			contact: defaultModalState
+			contact: defaultModalState,
+			bgColor: '',
+            mouseY: 0,
+            wH: 0, wW: 0
 		};
 	}
 
+	_onMouseMove(e) {
+        var color = this.getColorFromMousePos(window.innerWidth, window.innerHeight, e.screenX, e.screenY);
+        this.setState({ bgColor: color });
+    }  
+    
+    getColorFromMousePos(width, height, x, y) {
+        var a = this.normalize(0, width, x);
+        var b = this.normalize(height, 0, y);
+        console.log(a, b);
+
+        var h = a * 360;
+        var l = (b * 80) + 20;
+
+        return `hsl(${h},90%,${l}%)`
+    }
+
+    normalize(min, max, n) {
+        return ((n - min) / (max - min)).toFixed(10);
+    } 
+
 	openModal(modalId) {
-        this.focusModal(modalId);
+		this.focusModal(modalId);
 		this.updateModal(modalId, 'hidden', false);
 	}
 
@@ -61,7 +84,7 @@ export default class Home extends Component {
 
 	render() {
 		return (
-			<div className="home">
+			<div className="home" onMouseMove={this._onMouseMove.bind(this)} style={{backgroundColor: this.state.bgColor }}>
 				<Header headerLinks={headerLinks} handleHeaderLinkClick={this.openModal.bind(this)} />
 				<Modal
 					title="music.header.title"
@@ -99,7 +122,7 @@ export default class Home extends Component {
 				>
 					<Contact />
 				</Modal>
-                <div className="background-image"></div>
+				<div className="background-image" />
 			</div>
 		);
 	}
