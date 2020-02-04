@@ -19,11 +19,6 @@ export default class Header extends Component {
 						);
 					})}
 				</div>
-				<div className="header-title-container">
-					<h1>
-						<FormattedMessage id="header.title" />
-					</h1>
-				</div>
 			</header>
 		);
 	}

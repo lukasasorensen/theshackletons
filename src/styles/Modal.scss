@@ -2,33 +2,63 @@
 
 $modal-border: 2px solid rgb(48, 48, 48);
 $modal-bg: #ccc;
+$mobileMax: 715px;
 
 .modal {
-    top: 10%;
-    left: 50%;
-    margin-left: -400px;
-    z-index: 9999;
-    width: 800px;
-    height: 800px;
-    position: fixed;
-    border: $modal-border;
-    background-color: $modal-bg;
+	border: $modal-border;
+	background-color: $modal-bg;
 
-    .modal-header {
-        cursor: pointer;
-        text-align: center;
-        width: 100%;
-        border-bottom: $modal-border;
-        height: 25px;
+	&.hidden {
+		visibility: hidden;
+	}
+
+	.modal-header {
+		text-align: center;
+		width: 100%;
+		border-bottom: $modal-border;
+		height: 25px;
         padding-top: 5px;
-
+        
         .modal-close {
             position: absolute;
             left: 7px;
         }
-    }
+	}
+}
 
-    &.hidden {
-        visibility: hidden;
-    }
+@media (min-width: $mobileMax) {
+	.modal {
+		top: 10%;
+		left: 50%;
+		margin-left: -400px;
+		z-index: 9999;
+		width: 85%;
+		max-width: 750px;
+		height: 80vh;
+		position: fixed;
+
+		.modal-header {
+			cursor: pointer;
+		}
+	}
+
+	.hidden-desktop {
+		display: none !important;
+	}
+}
+
+@media (max-width: $mobileMax) {
+	.modal {
+		position: absolute;
+		margin: 60px 0 !important;
+		transform: translate(0, 0) !important;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.hidden-mobile {
+		display: none !important;
+	}
 }

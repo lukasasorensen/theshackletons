@@ -2,13 +2,11 @@
 @import "./mixins.scss";
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
-    height: 100vh;
-
-    .header-title-container {
-        width: 100vw;
-        text-align: center;
-    }
+    z-index: 9990;
     
     .header-links-container {
         //color: $primary-color;

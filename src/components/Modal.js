@@ -1,30 +1,38 @@
 import '../styles/Modal.scss';
 
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 import { FormattedMessage } from 'react-intl';
 export default class Modal extends React.Component {
+
 	onModalClose() {
 		this.props.handleOnModalClose();
 	}
 
 	focusModal() {
 		this.props.handleFocusModal();
-    }
-    
-    getRandomPosition() {
-        var maxY = 40;
-        var maxX = 150;
-        
-        var pos = {};
-        pos.y = -maxY + Math.random() * (maxY*2);
-        pos.x = -maxX + Math.random() * (maxX*2);
-        return pos;
+	}
+
+	getRandomPosition() {
+		var maxY = 20;
+		var minY = -50;
+		var maxX = 200;
+		var minX = -200;
+
+		var pos = {};
+		pos.y = minY + Math.random() * (maxY - minY);
+		pos.x = minX + Math.random() * (maxX - minX);
+		return pos;
     }
 
 	render() {
+        
 		return (
-			<Draggable onMouseDown={this.focusModal.bind(this)} handle=".modal-header" defaultPosition={this.getRandomPosition()}>
+			<Draggable
+				onMouseDown={this.focusModal.bind(this)}
+				handle=".modal-header"
+				defaultPosition={this.getRandomPosition()}
+			>
 				<div
 					className={`modal ${this.props.hidden ? 'hidden' : 'visible'}`}
 					style={{ zIndex: this.props.zIndex }}
