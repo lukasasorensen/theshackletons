@@ -1,8 +1,10 @@
 @import "./variables.scss";
 
-$modal-border: 2px solid rgb(48, 48, 48);
+$modal-border-color: rgb(48, 48, 48);
+$modal-border: 2px solid $modal-border-color;
 $modal-bg: #ccc;
 $mobileMax: 715px;
+$headerHeight: 25px;
 
 .modal {
 	border: $modal-border;
@@ -13,16 +15,52 @@ $mobileMax: 715px;
 	}
 
 	.modal-header {
-		text-align: center;
+        text-align: center;
 		width: 100%;
 		border-bottom: $modal-border;
-		height: 25px;
-        padding-top: 5px;
-        
-        .modal-close {
+		height: $headerHeight;
+		padding: 0;
+
+		.modal-close {
+            z-index: 111;
+			position: absolute;
+			text-align: center;
+			height: $headerHeight;
+			width: $headerHeight;
+			margin: 0;
+			font-size: 25px;
+			background-color: $modal-bg;
+			div {
+				margin-top: -5px;
+			}
+		}
+
+		.modal-title {
             position: absolute;
-            left: 7px;
-        }
+            z-index: 110;
+			background-color: $modal-bg;
+			display: inline-block;
+			height: $headerHeight - 5px;
+            padding: 3px 12px 0 12px;
+            margin-left: -30px;
+		}
+
+		.modal-lines {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 0 2px 0;
+            justify-content: space-around;
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            height: $headerHeight - 5px;
+            top: 0; left: 0;
+			.modal-line {
+                height: 2px;
+                margin-right: 7px;
+				background: $modal-border-color;
+			}
+		}
 	}
 }
 

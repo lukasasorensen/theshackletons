@@ -4,7 +4,6 @@ import React, { useLayoutEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 import { FormattedMessage } from 'react-intl';
 export default class Modal extends React.Component {
-
 	onModalClose() {
 		this.props.handleOnModalClose();
 	}
@@ -23,10 +22,9 @@ export default class Modal extends React.Component {
 		pos.y = minY + Math.random() * (maxY - minY);
 		pos.x = minX + Math.random() * (maxX - minX);
 		return pos;
-    }
+	}
 
 	render() {
-        
 		return (
 			<Draggable
 				onMouseDown={this.focusModal.bind(this)}
@@ -39,9 +37,18 @@ export default class Modal extends React.Component {
 				>
 					<div className="modal-header">
 						<div className="modal-close" onClick={this.onModalClose.bind(this)}>
-							&times;
+							<div>&times;</div>
 						</div>
-						<FormattedMessage id={this.props.title} />
+
+						<div className="modal-title">
+							<FormattedMessage id={this.props.title} />
+						</div>
+
+						<div className="modal-lines">
+							<div className="modal-line" />
+							<div className="modal-line" />
+							<div className="modal-line" />
+						</div>
 					</div>
 					<div className="modal-body">{this.props.children}</div>
 				</div>
