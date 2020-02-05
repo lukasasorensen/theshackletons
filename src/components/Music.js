@@ -6,9 +6,9 @@ export default class Music extends Component {
 		return (
 			<div className="music">
 				<div className="music-body">
-					<p className="music-body-text">
-                        music
-					</p>
+					<div class="bandcamp-iframe-container">
+                        <iframe src="https://colincampbellandtheshackletons.bandcamp.com/"></iframe>
+                    </div>
 				</div>
 			</div>
 		);
