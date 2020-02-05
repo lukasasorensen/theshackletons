@@ -68,6 +68,12 @@ $headerHeight: 25px;
     }
 }
 
+.iframe-container {
+    height: calc(100% - 37px);
+    width: calc(100% - 10px);
+    padding: 3px;
+}
+
 @media (min-width: $mobileMax) {
 	.modal {
 		top: 10%;
