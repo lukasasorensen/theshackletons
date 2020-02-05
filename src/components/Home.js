@@ -22,30 +22,30 @@ export default class Home extends Component {
 			gigs: defaultModalState,
 			contact: defaultModalState,
 			bgColor: '',
-            mouseY: 0,
-            wH: 0, wW: 0
+			mouseY: 0,
+			wH: 0,
+			wW: 0
 		};
 	}
 
 	_onMouseMove(e) {
-        var color = this.getColorFromMousePos(window.innerWidth, window.innerHeight, e.screenX, e.screenY);
-        this.setState({ bgColor: color });
-    }  
-    
-    getColorFromMousePos(width, height, x, y) {
-        var a = this.normalize(0, width, x);
-        var b = this.normalize(height, 0, y);
-        console.log(a, b);
+		var color = this.getColorFromMousePos(window.innerWidth, window.innerHeight, e.screenX, e.screenY);
+		this.setState({ bgColor: color });
+	}
 
-        var h = a * 360;
-        var l = (b * 80) + 20;
+	getColorFromMousePos(width, height, x, y) {
+		var a = this.normalize(0, width, x);
+		var b = this.normalize(height, 0, y);
 
-        return `hsl(${h},90%,${l}%)`
-    }
+		var h = a * 360;
+		var l = b * 80 + 20;
 
-    normalize(min, max, n) {
-        return ((n - min) / (max - min)).toFixed(10);
-    } 
+		return `hsl(${h},90%,${l}%)`;
+	}
+
+	normalize(min, max, n) {
+		return ((n - min) / (max - min)).toFixed(10);
+	}
 
 	openModal(modalId) {
 		this.focusModal(modalId);
@@ -57,16 +57,9 @@ export default class Home extends Component {
 	}
 
 	focusModal(modalId) {
-		this.setState(
-			(state) => {
-				let modals = { ...state };
-				let highestIndex = Math.max.apply(Math, Object.keys(modals).map((modal) => modals[modal].zIndex));
-				highestIndex++;
-				modals[modalId].zIndex = highestIndex;
-				return modals;
-			},
-			() => console.log(JSON.stringify(this.state, null, 2))
-		);
+		let highestIndex = Math.max(...headerLinks.map((modal) => this.state[modal.id].zIndex));
+        highestIndex++;
+		this.setState({ [modalId]: { ...this.state[modalId], zIndex: highestIndex } }, () => console.log(JSON.stringify(this.state, null, 2)));
 	}
 
 	updateModal(modalId, prop, value) {
@@ -84,7 +77,11 @@ export default class Home extends Component {
 
 	render() {
 		return (
-			<div className="home" onMouseMove={this._onMouseMove.bind(this)} style={{backgroundColor: this.state.bgColor }}>
+			<div
+				className="home"
+				onMouseMove={this._onMouseMove.bind(this)}
+				style={{ backgroundColor: this.state.bgColor }}
+			>
 				<Header headerLinks={headerLinks} handleHeaderLinkClick={this.openModal.bind(this)} />
 				<Modal
 					title="music.header.title"
