@@ -34,13 +34,14 @@ export default class Home extends Component {
 	}
 
 	getColorFromMousePos(width, height, x, y) {
-		var a = this.normalize(0, width, x);
-		var b = this.normalize(height, 0, y);
+		var _x = this.normalize(0, width, x);
+        var _y = this.normalize(height, 0, y);
+        let hmax = 360; let lmax = 90; let lmin = 40;
 
-		var h = a * 360;
-		var l = b * 80 + 20;
+		var h = _x * hmax;
+		var l = _y * (lmax - lmin) + lmin;
 
-		return `hsl(${h},90%,${l}%)`;
+		return `hsl(${h},80%,${l}%)`;
 	}
 
 	normalize(min, max, n) {
