@@ -33,7 +33,7 @@ export default class Modal extends React.Component {
 			>
 				<div
 					className={`modal ${this.props.hidden ? 'hidden' : 'visible'}`}
-					style={{ zIndex: this.props.zIndex }}
+					style={{ zIndex: this.props.zIndex, maxWidth: this.props.maxWidth, maxHeight: this.props.maxHeight }}
 				>
 					<div className="modal-header">
 						<div className="modal-close" onClick={this.onModalClose.bind(this)}>

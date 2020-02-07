@@ -36,12 +36,12 @@ export default class Home extends Component {
 	getColorFromMousePos(width, height, x, y) {
 		var _x = this.normalize(0, width, x);
         var _y = this.normalize(height, 0, y);
-        let hmax = 360; let lmax = 90; let lmin = 40;
+        let hmax = 360, hmin = 100, lmax = 100, lmin = 30;
 
-		var h = _x * hmax;
+		var h = _x * (hmax - hmin) + hmin;
 		var l = _y * (lmax - lmin) + lmin;
 
-		return `hsl(${h},80%,${l}%)`;
+		return `hsl(${h},${l}%,80%)`;
 	}
 
 	normalize(min, max, n) {
@@ -89,7 +89,9 @@ export default class Home extends Component {
 					hidden={this.state.music.hidden}
 					zIndex={this.state.music.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'music')}
-					handleFocusModal={this.focusModal.bind(this, 'music')}
+                    handleFocusModal={this.focusModal.bind(this, 'music')}
+                    maxWidth="700px"
+                    maxHeight="800px"
 				>
 					<Music />
 				</Modal>
@@ -98,7 +100,9 @@ export default class Home extends Component {
 					hidden={this.state.gigs.hidden}
 					zIndex={this.state.gigs.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'gigs')}
-					handleFocusModal={this.focusModal.bind(this, 'gigs')}
+                    handleFocusModal={this.focusModal.bind(this, 'gigs')}
+                    maxWidth="807px"
+                    maxHeight="637px"
 				>
 					<Gigs />
 				</Modal>
@@ -107,7 +111,8 @@ export default class Home extends Component {
 					hidden={this.state.about.hidden}
 					zIndex={this.state.about.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'about')}
-					handleFocusModal={this.focusModal.bind(this, 'about')}
+                    handleFocusModal={this.focusModal.bind(this, 'about')}
+                    maxHeight="400px"
 				>
 					<About />
 				</Modal>

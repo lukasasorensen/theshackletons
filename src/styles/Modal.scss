@@ -6,6 +6,7 @@ $modal-bg: #ccc;
 $headerHeight: 25px;
 
 .modal {
+    overflow: hidden;
 	border: $modal-border;
 	background-color: $modal-bg;
 
@@ -81,8 +82,9 @@ $headerHeight: 25px;
 		margin-left: -400px;
 		z-index: 9999;
 		width: 85%;
-		max-width: 750px;
-		height: 80vh;
+		max-width: 700px;
+        height: 80vh;
+        max-height: 800px;
 		position: fixed;
 
 		.modal-header {
