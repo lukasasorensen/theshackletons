@@ -12,7 +12,22 @@ $headerHeight: 25px;
 
 	&.hidden {
 		visibility: hidden;
-	}
+    }
+    
+    .modal-overlay {
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%; height: calc(100% - 35px);
+        z-index: 1000;
+        background-color: rgba(255,255,255, 0.2);
+
+        &.hidden {
+            display: none;
+        }
+        &.visible {
+            display: block;
+        }
+    }
 
 	.modal-header {
         text-align: center;

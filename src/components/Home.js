@@ -11,9 +11,10 @@ import '../styles/Home.scss';
 export default class Home extends Component {
 	constructor(props) {
 		super(props);
-
+    
 		const defaultModalState = {
-			hidden: true,
+            hidden: true,
+            inFocus: false,
 			zIndex: 9999
 		};
 		this.state = {
@@ -58,21 +59,29 @@ export default class Home extends Component {
 	}
 
 	focusModal(modalId) {
-		let highestIndex = Math.max(...headerLinks.map((modal) => this.state[modal.id].zIndex));
-        highestIndex++;
-		this.setState({ [modalId]: { ...this.state[modalId], zIndex: highestIndex } }, () => console.log(JSON.stringify(this.state, null, 2)));
+        var self = this;
+        self.headerLinks = headerLinks;
+
+        headerLinks.forEach(modal => {
+            if (modal.id !== modalId) {
+                this.updateModal(modal.id, 'inFocus', false);
+            }
+        });
+        this.updateModal(modalId, 'inFocus', true, function() {
+            let highestIndex = Math.max(...self.headerLinks.map((modal) => self.state[modal.id].zIndex));
+            highestIndex++;
+		    self.setState({ [modalId]: { ...self.state[modalId], zIndex: highestIndex } }, () => console.log(JSON.stringify(self.state, null, 2)));
+        });
 	}
 
-	updateModal(modalId, prop, value) {
-		console.log(modalId);
-
+	updateModal(modalId, prop, value, callback) {
 		this.setState(
 			(state) => {
 				let modal = { ...state[modalId] };
 				modal[prop] = value;
 				return { [modalId]: modal };
 			},
-			() => console.log(JSON.stringify(this.state))
+			() => { if (callback) callback(); }
 		);
 	}
 
@@ -86,7 +95,8 @@ export default class Home extends Component {
 				<Header headerLinks={headerLinks} handleHeaderLinkClick={this.openModal.bind(this)} />
 				<Modal
 					title="music.header.title"
-					hidden={this.state.music.hidden}
+                    hidden={this.state.music.hidden}
+                    inFocus={this.state.music.inFocus}
 					zIndex={this.state.music.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'music')}
                     handleFocusModal={this.focusModal.bind(this, 'music')}
@@ -97,7 +107,8 @@ export default class Home extends Component {
 				</Modal>
 				<Modal
 					title="gigs.header.title"
-					hidden={this.state.gigs.hidden}
+                    hidden={this.state.gigs.hidden}
+                    inFocus={this.state.gigs.inFocus}
 					zIndex={this.state.gigs.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'gigs')}
                     handleFocusModal={this.focusModal.bind(this, 'gigs')}
@@ -108,7 +119,8 @@ export default class Home extends Component {
 				</Modal>
 				<Modal
 					title="about.header.title"
-					hidden={this.state.about.hidden}
+                    hidden={this.state.about.hidden}
+                    inFocus={this.state.about.inFocus}
 					zIndex={this.state.about.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'about')}
                     handleFocusModal={this.focusModal.bind(this, 'about')}
@@ -118,7 +130,8 @@ export default class Home extends Component {
 				</Modal>
 				<Modal
 					title="contact.header.title"
-					hidden={this.state.contact.hidden}
+                    hidden={this.state.contact.hidden}
+                    inFocus={this.state.contact.inFocus}
 					zIndex={this.state.contact.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'contact')}
 					handleFocusModal={this.focusModal.bind(this, 'contact')}

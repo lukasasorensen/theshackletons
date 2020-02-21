@@ -1,6 +1,6 @@
 import '../styles/Modal.scss';
 
-import React, { useLayoutEffect, useState } from 'react';
+import React from 'react';
 import Draggable from 'react-draggable';
 import { FormattedMessage } from 'react-intl';
 export default class Modal extends React.Component {
@@ -51,6 +51,7 @@ export default class Modal extends React.Component {
 						</div>
 					</div>
 					<div className="modal-body">{this.props.children}</div>
+                    <div className={`modal-overlay ${this.props.inFocus ? 'hidden' : 'visible'}`}></div>
 				</div>
 			</Draggable>
 		);
