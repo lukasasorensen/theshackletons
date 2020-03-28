@@ -4,6 +4,21 @@ import React from 'react';
 import Draggable from 'react-draggable';
 import { FormattedMessage } from 'react-intl';
 export default class Modal extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+            initialized: false,
+			loading: true
+		};
+    }
+    
+    componentDidUpdate() {
+        if (!this.props.hidden && !this.state.initialized) {
+            this.setState({ initialized: true });
+        } 
+    }
+
 	onModalClose() {
 		this.props.handleOnModalClose();
 	}
@@ -33,7 +48,11 @@ export default class Modal extends React.Component {
 			>
 				<div
 					className={`modal ${this.props.hidden ? 'hidden' : 'visible'}`}
-					style={{ zIndex: this.props.zIndex, maxWidth: this.props.maxWidth, maxHeight: this.props.maxHeight }}
+					style={{
+						zIndex: this.props.zIndex,
+						maxWidth: this.props.maxWidth,
+						maxHeight: this.props.maxHeight
+					}}
 				>
 					<div className="modal-header">
 						<div className="modal-close" onClick={this.onModalClose.bind(this)}>
@@ -50,8 +69,8 @@ export default class Modal extends React.Component {
 							<div className="modal-line" />
 						</div>
 					</div>
-					<div className="modal-body">{this.props.children}</div>
-                    <div className={`modal-overlay ${this.props.inFocus ? 'hidden' : 'visible'}`}></div>
+					<div className="modal-body">{this.props.hidden && !this.state.initialized ? null : this.props.children}</div>
+					<div className={`modal-overlay ${this.props.inFocus ? 'hidden' : 'visible'}`} />
 				</div>
 			</Draggable>
 		);

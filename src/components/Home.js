@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import Header from './Header';
 import Modal from './Modal';
-import About from './About';
-import Music from './Music';
-import Gigs from './Gigs';
-import Contact from './Contact';
 import headerLinks from '../constants/headerLinks';
+import Processing from './Processing';
 import '../styles/Home.scss';
+
+const Gigs = lazy(() => import('./Gigs'));
+const Music = lazy(() => import('./Music'));
+const About = lazy(() => import('./About'));
+const Contact = lazy(() => import('./Contact'));
 
 export default class Home extends Component {
 	constructor(props) {
@@ -103,7 +105,9 @@ export default class Home extends Component {
                     maxWidth="700px"
                     maxHeight="800px"
 				>
-					<Music />
+                    <Suspense fallback={<Processing />}>
+					    <Music />
+                    </Suspense>
 				</Modal>
 				<Modal
 					title="gigs.header.title"
@@ -115,7 +119,9 @@ export default class Home extends Component {
                     maxWidth="807px"
                     maxHeight="637px"
 				>
-					<Gigs />
+                    <Suspense fallback={<Processing />}>
+					    <Gigs />
+                    </Suspense>
 				</Modal>
 				<Modal
 					title="about.header.title"
@@ -126,7 +132,9 @@ export default class Home extends Component {
                     handleFocusModal={this.focusModal.bind(this, 'about')}
                     maxHeight="400px"
 				>
-					<About />
+                    <Suspense fallback={<Processing />}>
+					    <About />
+                    </Suspense>
 				</Modal>
 				<Modal
 					title="contact.header.title"
@@ -136,7 +144,9 @@ export default class Home extends Component {
 					handleOnModalClose={this.closeModal.bind(this, 'contact')}
 					handleFocusModal={this.focusModal.bind(this, 'contact')}
 				>
-					<Contact />
+                    <Suspense fallback={<Processing />}>
+					    <Contact />
+                    </Suspense>
 				</Modal>
 				<div className="background-image" />
 			</div>

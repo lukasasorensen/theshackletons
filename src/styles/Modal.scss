@@ -11,7 +11,7 @@ $headerHeight: 25px;
 	background-color: $modal-bg;
 
 	&.hidden {
-		visibility: hidden;
+        display: none;
     }
     
     .modal-overlay {

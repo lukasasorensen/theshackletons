@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
+import Processing from './Processing';
 import '../styles/Music.scss';
 export default class Music extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loading: true
+        }
+    }
+    onFinishLoading() {
+		console.log('%c finished loading!', 'background: green; color: #fff');
+		this.setState({ loading: false });
+	}
 	render() {
 		return (
 			<div className="music">
 				<div className="music-body">
-					<div className="iframe-container">
+                    {this.state.loading ? <Processing /> : null}
+					<div className={`iframe-container ${this.state.loading ? 'vis-hidden' : ''}`}>
 						<div className="album">
 							<iframe
 								src="https://bandcamp.com/EmbeddedPlayer/album=2942798964/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/"
-								seamless
+								seamless onLoad={this.onFinishLoading.bind(this)}
 							>
 								<a href="http://colincampbellandtheshackletons.bandcamp.com/album/second-attempt">
 									Second Attempt by The Shackletons

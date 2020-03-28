@@ -9,7 +9,8 @@ const en = {
     "about.header.title": "About",
     "contact.header.title": "Contact",
     "music.header.title": "Music",
-    "gigs.header.title": "Gigs"
+    "gigs.header.title": "Gigs",
+    "processing.defaultMessage": "Loading..."
 }
 
 export default en;
