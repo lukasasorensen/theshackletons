@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a63f5c9dc17c6c1ae097d13e6a7e6a9f",
+    "revision": "5a2de5296fbf489182801102385a8bff",
     "url": "/theshackletons/index.html"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/theshackletons/static/css/6.0d7b810a.chunk.css"
   },
   {
-    "revision": "2add337ede21a07ffa7c",
+    "revision": "9a3dbe15cfced4d1e8b5",
     "url": "/theshackletons/static/css/main.e13be3be.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/theshackletons/static/js/6.7e1f9072.chunk.js"
   },
   {
-    "revision": "2add337ede21a07ffa7c",
-    "url": "/theshackletons/static/js/main.f0781a27.chunk.js"
+    "revision": "9a3dbe15cfced4d1e8b5",
+    "url": "/theshackletons/static/js/main.4537cd15.chunk.js"
   },
   {
     "revision": "e7bfc14c9f02a4e75958",
