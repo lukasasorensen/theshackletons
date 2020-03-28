@@ -7,7 +7,7 @@ export default class Contact extends Component {
 			<div className="contact">
 				<div className="contact-body">
 					<p className="contact-body-text">
-                        Contact
+                        Email: <a href="mailto:theshackletonsband@gmail.com" target="_blank">theshackletonsband@gmail.com</a>
 					</p>
 				</div>
 			</div>

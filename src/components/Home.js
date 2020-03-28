@@ -103,7 +103,7 @@ export default class Home extends Component {
 					handleOnModalClose={this.closeModal.bind(this, 'music')}
                     handleFocusModal={this.focusModal.bind(this, 'music')}
                     maxWidth="700px"
-                    maxHeight="800px"
+                    maxHeight="820px"
 				>
                     <Suspense fallback={<Processing />}>
 					    <Music />
@@ -116,8 +116,8 @@ export default class Home extends Component {
 					zIndex={this.state.gigs.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'gigs')}
                     handleFocusModal={this.focusModal.bind(this, 'gigs')}
-                    maxWidth="807px"
-                    maxHeight="637px"
+                    maxWidth="820px"
+                    maxHeight="650px"
 				>
                     <Suspense fallback={<Processing />}>
 					    <Gigs />
@@ -142,7 +142,9 @@ export default class Home extends Component {
                     inFocus={this.state.contact.inFocus}
 					zIndex={this.state.contact.zIndex}
 					handleOnModalClose={this.closeModal.bind(this, 'contact')}
-					handleFocusModal={this.focusModal.bind(this, 'contact')}
+                    handleFocusModal={this.focusModal.bind(this, 'contact')}
+                    maxHeight="200px"
+                    maxWidth="500px"
 				>
                     <Suspense fallback={<Processing />}>
 					    <Contact />
