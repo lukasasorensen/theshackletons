@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5a2de5296fbf489182801102385a8bff",
+    "revision": "8ff8126e57ee923115c4ac40f5a23645",
     "url": "/theshackletons/index.html"
   },
   {
-    "revision": "fd9ecfeee8ee0b17f952",
+    "revision": "495fbc8ff72e61c5ea5e",
     "url": "/theshackletons/static/css/3.70d6c955.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/theshackletons/static/css/6.0d7b810a.chunk.css"
   },
   {
-    "revision": "9a3dbe15cfced4d1e8b5",
+    "revision": "20c12d78503d1136f17d",
     "url": "/theshackletons/static/css/main.e13be3be.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/theshackletons/static/js/2.2215dafa.chunk.js"
   },
   {
-    "revision": "fd9ecfeee8ee0b17f952",
-    "url": "/theshackletons/static/js/3.2ac3b00e.chunk.js"
+    "revision": "495fbc8ff72e61c5ea5e",
+    "url": "/theshackletons/static/js/3.f6fd63a9.chunk.js"
   },
   {
     "revision": "4d2f5309c156143fdedd",
@@ -44,12 +44,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/theshackletons/static/js/6.7e1f9072.chunk.js"
   },
   {
-    "revision": "9a3dbe15cfced4d1e8b5",
-    "url": "/theshackletons/static/js/main.4537cd15.chunk.js"
+    "revision": "20c12d78503d1136f17d",
+    "url": "/theshackletons/static/js/main.60e8306c.chunk.js"
   },
   {
-    "revision": "e7bfc14c9f02a4e75958",
-    "url": "/theshackletons/static/js/runtime-main.852cee2f.js"
+    "revision": "c00890aa9ab595531f14",
+    "url": "/theshackletons/static/js/runtime-main.27f30bad.js"
   },
   {
     "revision": "88714a27c1a6c90148b5793a4b8ad8cb",
