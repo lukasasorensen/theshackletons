@@ -2,8 +2,20 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0; left: 0;
     
+    .loading-gif-container {
+        img {
+            height: 50px;
+            width: auto;
+        }
+    }
+
     .processing-message {
-        margin-top: 40%;
+        margin-top: 8px;
     }
 }
