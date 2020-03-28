@@ -1,0 +1,1 @@
+{"version":3,"sources":["Gigs.scss"],"names":[],"mappings":"AAAA,iBAEQ,wBAAyB,CACzB,eAAgB","file":"5.d9493372.chunk.css","sourcesContent":[".gigs {\n    .gigs-body {\n        height: calc(100% - 30px);\n        overflow: scroll;\n    }\n}"]}

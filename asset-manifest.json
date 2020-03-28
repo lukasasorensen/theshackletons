@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/shackletons/static/css/main.ce07b8f0.chunk.css",
+    "main.js": "/shackletons/static/js/main.22e1b32b.chunk.js",
+    "main.js.map": "/shackletons/static/js/main.22e1b32b.chunk.js.map",
+    "runtime-main.js": "/shackletons/static/js/runtime-main.fb5722fc.js",
+    "runtime-main.js.map": "/shackletons/static/js/runtime-main.fb5722fc.js.map",
+    "static/js/2.2215dafa.chunk.js": "/shackletons/static/js/2.2215dafa.chunk.js",
+    "static/js/2.2215dafa.chunk.js.map": "/shackletons/static/js/2.2215dafa.chunk.js.map",
+    "static/css/3.70d6c955.chunk.css": "/shackletons/static/css/3.70d6c955.chunk.css",
+    "static/js/3.2ac3b00e.chunk.js": "/shackletons/static/js/3.2ac3b00e.chunk.js",
+    "static/js/3.2ac3b00e.chunk.js.map": "/shackletons/static/js/3.2ac3b00e.chunk.js.map",
+    "static/css/4.9a9c5ec0.chunk.css": "/shackletons/static/css/4.9a9c5ec0.chunk.css",
+    "static/js/4.c9c5b804.chunk.js": "/shackletons/static/js/4.c9c5b804.chunk.js",
+    "static/js/4.c9c5b804.chunk.js.map": "/shackletons/static/js/4.c9c5b804.chunk.js.map",
+    "static/css/5.d9493372.chunk.css": "/shackletons/static/css/5.d9493372.chunk.css",
+    "static/js/5.6a558811.chunk.js": "/shackletons/static/js/5.6a558811.chunk.js",
+    "static/js/5.6a558811.chunk.js.map": "/shackletons/static/js/5.6a558811.chunk.js.map",
+    "static/css/6.0d7b810a.chunk.css": "/shackletons/static/css/6.0d7b810a.chunk.css",
+    "static/js/6.7e1f9072.chunk.js": "/shackletons/static/js/6.7e1f9072.chunk.js",
+    "static/js/6.7e1f9072.chunk.js.map": "/shackletons/static/js/6.7e1f9072.chunk.js.map",
+    "index.html": "/shackletons/index.html",
+    "precache-manifest.67e861dd7a088328983058f95fa6ac91.js": "/shackletons/precache-manifest.67e861dd7a088328983058f95fa6ac91.js",
+    "service-worker.js": "/shackletons/service-worker.js",
+    "static/css/3.70d6c955.chunk.css.map": "/shackletons/static/css/3.70d6c955.chunk.css.map",
+    "static/css/4.9a9c5ec0.chunk.css.map": "/shackletons/static/css/4.9a9c5ec0.chunk.css.map",
+    "static/css/5.d9493372.chunk.css.map": "/shackletons/static/css/5.d9493372.chunk.css.map",
+    "static/css/6.0d7b810a.chunk.css.map": "/shackletons/static/css/6.0d7b810a.chunk.css.map",
+    "static/css/main.ce07b8f0.chunk.css.map": "/shackletons/static/css/main.ce07b8f0.chunk.css.map",
+    "static/media/loading.gif": "/shackletons/static/media/loading.88714a27.gif",
+    "static/media/Home.scss": "/shackletons/static/media/shackletons-edited.85f06b11.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb5722fc.js",
+    "static/js/2.2215dafa.chunk.js",
+    "static/css/main.ce07b8f0.chunk.css",
+    "static/js/main.22e1b32b.chunk.js"
+  ]
+}
