@@ -7,7 +7,8 @@ export default class About extends Component {
 			<div className="about">
 				<div className="about-body">
 					<p className="about-body-text">
-						<FormattedMessage id="about.body" />
+						<FormattedMessage id="about.body" /><br/><br/>
+						<FormattedMessage id="about.bodyfooter" />
 					</p>
 				</div>
 			</div>
