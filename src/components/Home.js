@@ -151,6 +151,7 @@ export default class Home extends Component {
                     </Suspense>
 				</Modal>
 				<div className="background-image" />
+                <div className="copyright">Copyright &copy; {new Date().getFullYear()} Colin Campbell & The Shackletons | Website By: <a href="mailto:lukasasorensen@gmail.com">Lukas Sorensen</a></div>
 			</div>
 		);
 	}

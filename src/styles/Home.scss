@@ -1,23 +1,33 @@
 @import "./variables.scss";
 
 .home {
-    display: flex;
-    justify-content: center;
-    vertical-align: middle;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    z-index: 1;
-    top: 0; left: 0;
+	display: flex;
+	justify-content: center;
+	vertical-align: middle;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
 
-    .background-image {
-        display: block;
-        background: url('../assets/shackletons-edited.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-top: 17vh;
-        height: 60vh;
-        width: 60vw;
-    }
+	.background-image {
+		display: block;
+		background: url('../assets/shackletons-edited.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin-top: 17vh;
+		height: 60vh;
+		width: 60vw;
+	}
+
+	.copyright {
+		position: absolute;
+		bottom: 15px;
+		width: 100%;
+		text-align: center;
+		opacity: 0.5;
+		font-size: 9px;
+	}
 }

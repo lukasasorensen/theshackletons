@@ -69,7 +69,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "aws s3 rm s3://www.shackletonsband.com --recursive & aws s3 sync build s3://www.theshackletonsband.com"
   },
   "eslintConfig": {
     "extends": "react-app"
