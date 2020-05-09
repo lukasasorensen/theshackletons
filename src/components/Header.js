@@ -11,7 +11,7 @@ export default class Header extends Component {
 		return (
 			<header>
 				<div className="header-links-container">
-                    <a href="https://www.instagram.com/theshackletonsband/?hl=en" target="_blank">
+                    <a href="https://www.instagram.com/theshackletonsband/?hl=en" className="social-link" target="_blank">
                         <i className="fab fa-instagram"></i>
                     </a>
 					{this.props.headerLinks.map((link) => {

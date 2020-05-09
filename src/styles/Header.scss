@@ -12,13 +12,14 @@ header {
         //color: $primary-color;
         margin-left: 5%;
         margin-top: 3%;
-        display: inline-block;
-        width: 100%;
+        display: flex;
+        width: 90%;
+        max-width: 450px;
+        justify-content: space-between;
     
         a {
             font-size: 1.2em;
             color: inherit;
-            margin-right: 20px;
         }
     }
     
@@ -29,6 +30,13 @@ header {
         margin-left: -8%;
         white-space: nowrap;
         @include transform(rotate(-30deg));
+    }
+
+    @media screen and (max-width: 450px) {
+        .social-link {
+            position: absolute;
+            top: 60px;
+        }
     }
 }
 
